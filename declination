@@ -6,7 +6,7 @@ import numpy as np
 
 
 def get_alpha(adjacent_side, opposite_side, hypotenuse):
-    '''This does nothing yet'''
+    '''Enter the measured values for the sides of your triangle to print out the corresponding value(s) for alpha'''
 
     calculated_hypotenuse = np.sqrt(adjacent_side ** 2 + opposite_side ** 2)
 
