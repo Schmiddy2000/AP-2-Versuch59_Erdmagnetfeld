@@ -1,0 +1,37 @@
+'''This file is used to calculate the angle alpha between the magnetic north pole and the 
+orientation of the map'''
+
+import numpy as np
+# from matplotlib import pyplot
+
+
+def get_alpha(adjacent_side, opposite_side, hypotenuse):
+    '''This does nothing yet'''
+
+    calculated_hypotenuse = np.sqrt(adjacent_side ** 2 + opposite_side ** 2)
+
+    calculated_sin_alpha = np.arcsin(opposite_side / calculated_hypotenuse)
+    calculated_cos_alpha = np.arccos(adjacent_side / calculated_hypotenuse)
+
+    print(hypotenuse, calculated_hypotenuse)
+
+
+    sin_alpha = np.arcsin(opposite_side / hypotenuse)
+    cos_alpha = np.arccos(adjacent_side / hypotenuse)
+
+    tan_alpha = np.arctan(opposite_side / adjacent_side)
+
+    print('Sin: Calculated alpha =', round(calculated_sin_alpha * 180 / np.pi, 3), 
+    '- Measured alpha =', round(sin_alpha * 180 / np.pi, 3))
+    print('Cos: Calculated alpha =', round(calculated_cos_alpha * 180 / np.pi, 3), 
+    '- Measured alpha =', round(cos_alpha * 180 / np.pi, 3))
+    print('Tan: Measured alpha =', round(tan_alpha * 180 / np.pi, 3))
+
+    best_sin = 1
+    best_cos = 1
+    best_tan = 1
+
+    return best_sin, best_cos, best_tan
+
+
+get_alpha(21.05, 6.25, 21.8)
